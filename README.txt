@@ -1,0 +1,2 @@
+This is a simple, small JavaScript library to create exclusive slide-out panels.
+Compatible with basically every browser ever.
