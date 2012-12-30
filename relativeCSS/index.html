@@ -1,0 +1,62 @@
+<html>
+<head>
+	<script language="javascript" src="../ypSlideOutMenusC.js"></script>
+	<script language="javascript">
+		var myMenu1 = new ypSlideOutMenu("menu1", "down", 0, 0, 180, 200)
+		var myMenu2 = new ypSlideOutMenu("menu2", "down", 0, 0, 180, 200)
+		var myMenu3 = new ypSlideOutMenu("menu3", "down", 0, 0, 180, 200)
+
+    ypSlideOutMenu.writeCSS();
+	</script>
+
+	<style type="text/css">
+		.menuActuator a { 
+			color:#666666;
+			font-weight:bold;
+			font-size:12px;
+			font-family:arial;
+		}
+
+		.menu {
+			font-family:verdana;
+			color:#666666;
+			font-size:10px;
+			background-color:#cccccc;
+			layer-background-color:#cccccc;
+		}
+
+    td div {
+      /* this makes TDs a container with their own coordinate system.
+         absolutely-positioned elements will be offset relative to them */
+      position:relative;
+      }
+	</style>
+</head>
+
+<body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 bgcolor="white">
+	<table bgcolor="#CCCCCC" cellpadding="2" cellspacing="0" border="0" align="center">
+	<tr>
+		<td width="50" class="menuActuator"><a href="#" onmouseover="ypSlideOutMenu.showMenu('menu1');" onmouseout="ypSlideOutMenu.hideMenu('menu1')">menu1</a>
+    <div>
+      <div id="menu1Container">
+        <div id="menu1Content" class="menu">this is menu 1!</div>
+      </div>
+      </div>
+    </td>
+		<td width="50" class="menuActuator"><a href="#" onmouseover="ypSlideOutMenu.showMenu('menu2');" onmouseout="ypSlideOutMenu.hideMenu('menu2')">menu2</a>
+    <div>
+      <div id="menu2Container">
+        <div id="menu2Content" class="menu">this is menu 2!</div>
+      </div>
+    </div>
+    </td>
+		<td width="50" class="menuActuator"><a href="#" onmouseover="ypSlideOutMenu.showMenu('menu3');" onmouseout="ypSlideOutMenu.hideMenu('menu3')">menu3</a>
+      <div>
+      <div id="menu3Container">
+        <div id="menu3Content" class="menu">this is menu 3!</div>
+      </div>
+      </div>
+    </td>
+	</tr>
+	</table>
+</body>
