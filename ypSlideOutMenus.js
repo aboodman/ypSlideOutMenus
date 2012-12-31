@@ -1,19 +1,19 @@
 /*****************************************************
  * ypSlideOutMenu
- * http://ypslideoutmenus.sourceforge.net/
+ * https://github.com/aboodman/ypSlideOutMenus
  * 3/04/2001
- * 
+ *
  * a nice little script to create exclusive, slide-out
- * menus for ns4, ns6, mozilla, opera, ie4, ie5 on 
- * mac and win32. I've got no linux or unix to test on but 
- * it should(?) work... 
+ * menus for ns4, ns6, mozilla, opera, ie4, ie5 on
+ * mac and win32. I've got no linux or unix to test on but
+ * it should(?) work...
  *
  * Licensed under AFL 2.0
  * http://www.opensource.org/licenses/afl-2.0.php
  *
- * Revised: 
+ * Revised:
  * - 08/29/2002 : added .hideAll()
- * - 04/15/2004 : added .writeCSS() to support more 
+ * - 04/15/2004 : added .writeCSS() to support more
  *                than 30 menus.
  *
  * --youngpup--
@@ -95,7 +95,7 @@ ypSlideOutMenu.prototype.load = function() {
 		this.style		= this.ns4 ? this.menu : this.menu.style
 		this.homePos	= eval("0" + this.dirType + this.dim)
 		this.outPos		= 0
-		this.accelConst	= (this.outPos - this.homePos) / ypSlideOutMenu.aniLen / ypSlideOutMenu.aniLen 
+		this.accelConst	= (this.outPos - this.homePos) / ypSlideOutMenu.aniLen / ypSlideOutMenu.aniLen
 
 		// set event handlers.
 		if (this.ns4) this.menu.captureEvents(Event.MOUSEOVER | Event.MOUSEOUT);
@@ -106,12 +106,12 @@ ypSlideOutMenu.prototype.load = function() {
 		this.endSlide()
 	}
 }
-	
+
 ypSlideOutMenu.showMenu = function(id)
 {
 	var reg = ypSlideOutMenu.Registry
 	var obj = ypSlideOutMenu.Registry[id]
-	
+
 	if (obj.container) {
 		obj.over = true
 
@@ -152,7 +152,7 @@ ypSlideOutMenu.hide = function(id)
 	obj.over = false
 
 	if (obj.hideTimer) window.clearTimeout(obj.hideTimer)
-	
+
 	// flag that this scheduled event has occured.
 	obj.hideTimer = 0
 
@@ -164,7 +164,7 @@ ypSlideOutMenu.prototype.startSlide = function(open) {
 	this[open ? "onactivate" : "ondeactivate"]()
 	this.open = open
 	if (open) this.setVisibility(true)
-	this.startTime = (new Date()).getTime()	
+	this.startTime = (new Date()).getTime()
 	this.aniTimer = window.setInterval(this.gRef + ".slide()", ypSlideOutMenu.minCPUResolution)
 }
 
@@ -191,11 +191,11 @@ ypSlideOutMenu.prototype.endSlide = function() {
 	}
 }
 
-ypSlideOutMenu.prototype.setVisibility = function(bShow) { 
+ypSlideOutMenu.prototype.setVisibility = function(bShow) {
 	var s = this.ns4 ? this.container : this.container.style
 	s.visibility = bShow ? "visible" : "hidden"
 }
-ypSlideOutMenu.prototype.moveTo = function(p) { 
+ypSlideOutMenu.prototype.moveTo = function(p) {
 	this.style[this.orientation == "h" ? "left" : "top"] = this.ns4 ? p : p + "px"
 }
 ypSlideOutMenu.prototype.getPos = function(c) {
