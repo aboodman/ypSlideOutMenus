@@ -4,4 +4,4 @@ continues to see significant use to this day.
 
 Really though, you should use something more modern for new projects.
 
-Live demo: http://aboodman.github.com/ypSlideOutMenus
+Live demo: http://aboodman.github.io/ypSlideOutMenus
